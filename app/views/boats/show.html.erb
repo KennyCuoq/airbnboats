@@ -1,2 +1,22 @@
-<h1>Boats#show</h1>
-<p>Find me in app/views/boats/show.html.erb</p>
+<!-- <p>"Boat image in the background"</p> -->
+<h1><%= @boat.name %></h1>
+
+<ul>
+  <li>Boat type: <%= @boat.boat_type %></li>
+  <li>Description: <%= @boat.description %></li>
+  <li>Location: <%= @boat.location %></li>
+  <li>Daily price: <%= @boat.daily_price %></li>
+  <li>Capacity: <%= @boat.capacity %></li>
+  <li>Crew number: <%= @boat.crew_number %></li>
+</ul>
+
+<div class="container">
+  <%= simple_form_for([@boat, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :passenger_number %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+

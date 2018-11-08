@@ -5,7 +5,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.references :boat, foreign_key: true
       t.date :start_date
       t.date :end_date
-      t.string :status
+      t.string :status, default: "requested"
       t.integer :passenger_number
       t.integer :total_price
 
