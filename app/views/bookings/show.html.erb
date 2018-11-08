@@ -23,13 +23,3 @@
   <li><p><em>Total price</em>: <%= @booking.total_price %></p></li>
 </ul>
 
-<div class="container">
-  <%= month_calendar(attribute: :start_date, end_attribute: :end_date), events: @bookings do |date, bookings| %>
-    <%= date %>
-    <% bookings.each do |booking| %>
-      <div>
-        <%= booking.Name %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
