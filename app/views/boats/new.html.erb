@@ -1,7 +1,7 @@
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://cdn-images-1.medium.com/max/1600/1*pxiQz65HUoyD7iTbbODw-A.jpeg');">
+<div class="banner banner-adjusted-height" id="banner-margin-top" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://cdn-images-1.medium.com/max/1600/1*pxiQz65HUoyD7iTbbODw-A.jpeg');">
   <div class="banner-form">
-    <h1>Add your boat</h1>
+    <h2>Add your boat</h2>
     <div>
       <%= simple_form_for(@boat) do |f| %>
         <%= f.input :name, label: false, placeholder: "Name", input_html: {class: "transparent-input" } %>
