@@ -1,2 +1,25 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1>Booking overview</h1>
+<p> Below you can find an overview of your booking details</p>
+
+<h2><%= @boat.name %></h2>
+<p> Boat details:</p>
+<ul>
+  <li><p><em>Name</em>: <%= @boat.name %></p></li>
+  <li><p><em>Type</em>: <%= @boat.boat_type %></p></li>
+  <li><p><em>Description</em>: <%= @boat.description %></p></li>
+  <li><p><em>Location</em>: <%= @boat.location %></p></li>
+  <li><p><em>Daily price</em>: <%= @boat.daily_price %></p></li>
+  <li><p><em>Capacity</em>: <%= @boat.capacity %></p></li>
+  <li><p><em>Crew number</em>: <%= @boat.crew_number %></p></li>
+</ul>
+
+<h2>Booking status: <%= @booking.status %></h2>
+
+<p> booking details:</p>
+<ul>
+  <li><p><em>Start date</em>: <%= @booking.start_date %></p></li>
+  <li><p><em>End date</em>: <%= @booking.end_date %></p></li>
+  <li><p><em>Number of passengers</em>: <%= @booking.passenger_number %></p></li>
+  <li><p><em>Total price</em>: <%= @booking.total_price %></p></li>
+</ul>
+
