@@ -9,3 +9,14 @@
   <li>Capacity: <%= @boat.capacity %></li>
   <li>Crew number: <%= @boat.crew_number %></li>
 </ul>
+
+<div class="container">
+  <%= simple_form_for([@boat, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :passenger_number %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+

@@ -1,10 +1,15 @@
 class BookingsController < ApplicationController
 
   def create
-    # @booking = Booking.new(booking_params)
-    # @booking.user_id = current_user.id
-    # @booking.save
-    # redirect_to booking_path(@booking)
+    @boat = Boat.find(params[:boat_id])
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.boat = @boat
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render "boats/show"
+    end
   end
 
   def show
@@ -20,6 +25,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    # params.require(:booking).permit(:boat_id, :start_date, :end_date, :passenger_number, :total_price)
+    params.require(:booking).permit(:start_date, :end_date, :passenger_number, :total_price)
   end
 end
