@@ -1,27 +1,18 @@
 <div >
   <div class="container">
-    <div class="dashboard-grid" style="height: calc(100vh - 70px);">
+    <div class="dashboard-grid text-center" style="height: calc(100vh - 70px);">
       <div class="user-info grid-element">
-        <h1>MY PROFILE INFO</h1>
+        <%= render 'user-info' %>
       </div>
       <div class="user-boats grid-element">
-        <h1>MY BOATS</h1>
+        <%= render 'user-boats' %>
       </div>
       <div class="user-bookings grid-element">
-        <h1>MY BOOKINGS</h1>
+        <%= render 'user-bookings' %>
       </div>
       <div class="user-reservations grid-element">
-        <h1>MY RESERVATIONS</h1>
+        <%= render 'user-reservations' %>
       </div>
     </div>
   </div>
 </div>
-
-
-
-<h1>Dashboard#user_profile</h1>
-<p>Find me in app/views/dashboard/user_profile.html.erb</p>
-<%= @user.email %>
-<% @boats.each do |boat| %>
-<%= boat.name %>
-<% end %>
