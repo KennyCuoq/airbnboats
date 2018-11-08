@@ -1,7 +1,7 @@
 
 <div class="banner banner-adjusted-height" id="banner-margin-top" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://cdn-images-1.medium.com/max/1600/1*pxiQz65HUoyD7iTbbODw-A.jpeg');">
   <div class="banner-form">
-    <h2>Add your boat</h2>
+    <h2>Rent your boat</h2>
     <div>
       <%= simple_form_for(@boat) do |f| %>
         <%= f.input :name, label: false, placeholder: "Name", input_html: {class: "transparent-input" } %>
@@ -12,7 +12,7 @@
         <%= f.input :capacity, label: false, placeholder: "Capacity", input_html: {class: "transparent-input" } %>
         <%= f.input :crew_number, label: false, placeholder: "Crew size", input_html: {class: "transparent-input" } %>
         <%= f.input :photo, label: false, placeholder: "Photo", input_html: {class: "transparent-input" } %>
-        <%= f.submit class: "btn btn-primary" %>
+        <%= f.submit class: "btn-transparent" %>
       <% end %>
     </div>
   </div>
