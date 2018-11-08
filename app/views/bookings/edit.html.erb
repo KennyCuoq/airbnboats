@@ -1,2 +1,24 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,101,0.6) 0%, rgba(0,36,61,0.8) 20%), url('https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
+  <div>
+
+    <h1>Change your booking</h1>
+    <h2>Boat: <%= @boat.name %></h2>
+
+    <div class="banner-form">
+      <%= simple_form_for([@boat, @booking]) do |f| %>
+        <div class="date-container">
+          <div>
+            <%= f.input :start_date, input_html: {class: "transparent-input" }  %>
+          </div>
+          <div>
+            <%= f.input :end_date, input_html: {class: "transparent-input" }  %>
+          </div>
+        </div>
+        <div>
+          <%= f.input :passenger_number, input_html: {class: "transparent-input" }  %>
+        </div>
+        <%= f.submit class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
