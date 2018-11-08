@@ -1,1 +1,14 @@
-<h1>MY RESERVATIONS</h1>
+<h2>Bookings you've made</h2>
+<% @user.bookings.each do |booking| %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    url('https://prodwebassets.s3.amazonaws.com/boats/4681986/4681986_20140410083142702_1_XLARGE.jpg')">
+    <div class="card-description">
+      <p><%= booking.status %></p>
+      <p><%= booking.end_date - booking.start_date %> days</p>
+      <p><%= booking.total_price %></p>
+      <h2><%= booking.boat.name %></h2>
+      <p><%= booking.boat.location %></p>
+    </div>
+  </div>
+
+<% end %>
