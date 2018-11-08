@@ -1,2 +1,39 @@
-<h1>Boats#index</h1>
-<p>Find me in app/views/boats/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,90,70,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://images.pexels.com/photos/910154/pexels-photo-910154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+  <div class="banner-content">
+    <h1>Rent your Boat</h1>
+    <p>Experiences Worldwide</p>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <% @boats.each do |boat| %>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to boat_path(boat) do %>
+        <div class="card-wrapper">
+         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        url('https://prodwebassets.s3.amazonaws.com/boats/4681986/4681986_20140410083142702_1_XLARGE.jpg')">
+          <div class="card-description">
+          <h2><%= boat.name.capitalize %></h2>
+        </div>
+        <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+</div>
+
+
+
+
+
+
+
+
