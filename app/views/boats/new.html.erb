@@ -1,14 +1,19 @@
-<%= render "boats#new_banner" %>
 
-<h1>Create a new boat</h1>
-<%= simple_form_for(@boat) do |f| %>
-<%= f.input :name %>
-<%= f.input :boat_type %>
-<%= f.input :description %>
-<%= f.input :location %>
-<%= f.input :daily_price %>
-<%= f.input :capacity %>
-<%= f.input :crew_number %>
-<%= f.input :photo %>
-<%= f.submit %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://cdn-images-1.medium.com/max/1600/1*pxiQz65HUoyD7iTbbODw-A.jpeg');">
+  <div class="banner-content">
+    <h1>Add your boat</h1>
+    <div>
+      <%= simple_form_for(@boat) do |f| %>
+        <%= f.input :name, label: false, placeholder: "Name", input_html: {class: "transparent-input" } %>
+        <%= f.input :boat_type, label: false, placeholder: "Boat type", input_html: {class: "transparent-input" } %>
+        <%= f.input :description, label: false, placeholder: "Description", input_html: {class: "transparent-input" } %>
+        <%= f.input :location, label: false, placeholder: "Location", input_html: {class: "transparent-input" } %>
+        <%= f.input :daily_price, label: false, placeholder: "Daily price (euros)", input_html: {class: "transparent-input" } %>
+        <%= f.input :capacity, label: false, placeholder: "Capacity", input_html: {class: "transparent-input" } %>
+        <%= f.input :crew_number, label: false, placeholder: "Crew size", input_html: {class: "transparent-input" } %>
+        <%= f.input :photo, label: false, placeholder: "Photo", input_html: {class: "transparent-input" } %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
