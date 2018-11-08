@@ -20,6 +20,8 @@ class BookingsController < ApplicationController
   end
 
   def patch
+    @boat = Boat.find(params[:boat_id])
+    @booking = Booking.find(booking_params)
   end
 
   def edit
