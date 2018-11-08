@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.boat = @boat
-    @booking.total_price = (@booking.end_date - @booking.start_date).to_i * @boat.daily_price
+    @booking.total_price = ((@booking.end_date - @booking.start_date).to_i + 1) * @boat.daily_price
     if @booking.save
       redirect_to boat_booking_path(@boat, @booking)
     else
