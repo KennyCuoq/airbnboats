@@ -1,0 +1,23 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.user-info {
+  background: blue;
+  grid-column: 1 / span 1 ;
+  grid-row: 1 / span 2;
+}
+
+.user-boats {
+  background: red;
+  grid-column: 1 / span 1 ;
+  grid-row: 3 / span 4;
+}
+
+.user-bookings {
+  background: green;
+    grid-column: 1 / span 1 ;
+  grid-row: 3 / span 4;
+}

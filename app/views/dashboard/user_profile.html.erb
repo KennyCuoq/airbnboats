@@ -1,0 +1,21 @@
+<h1>Dashboard#user_profile</h1>
+<p>Find me in app/views/dashboard/user_profile.html.erb</p>
+<%= @user.email %>
+<% @boats.each do |boat| %>
+<%= boat.name %>
+<% end %>
+
+<div class="dashboard-grid">
+  <div class="user-info">
+    <h1>MY PROFILE INFO</h1>
+  </div>
+  <div class="user-boats">
+    <h1>HELLO</h1>
+  </div>
+  <div class="user-bookings">
+    <h1>MY BOOKINGS</h1>
+  </div>
+  <div class="user-reservations">
+    <h1>MY RESERVATIONS</h1>
+  </div>
+</div>
