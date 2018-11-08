@@ -15,10 +15,10 @@
     <% @boats.each do |boat| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to boat_path(boat) do %>
-      <div class="card-wrapper">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        <div class="card-wrapper">
+         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
         url('https://prodwebassets.s3.amazonaws.com/boats/4681986/4681986_20140410083142702_1_XLARGE.jpg')">
-        <div class="card-description">
+          <div class="card-description">
           <h2><%= boat.name.capitalize %></h2>
         </div>
         <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
@@ -27,6 +27,7 @@
     <% end %>
   </div>
   <% end %>
+</div>
 </div>
 
 
