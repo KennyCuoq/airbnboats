@@ -1,1 +1,3 @@
-<h1>MY BOOKINGS</h1>
+<% @user.bookings.each do |booking| %>
+  <h1><%= booking.end_date - booking.start_date %></h1>
+<% end %>
