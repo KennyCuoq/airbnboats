@@ -1,5 +1,6 @@
-<h1>Create a new boat</h1>
+<%= render "boats#new_banner" %>
 
+<h1>Create a new boat</h1>
 <%= simple_form_for(@boat) do |f| %>
 <%= f.input :name %>
 <%= f.input :boat_type %>
