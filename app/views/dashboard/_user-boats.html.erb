@@ -1,11 +1,15 @@
 <h1>Your boats</h1>
 
 <% @user.boats.each do |boat| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-    url('https://prodwebassets.s3.amazonaws.com/boats/4681986/4681986_20140410083142702_1_XLARGE.jpg')">
-    <div class="card-description">
-      <h2><%= boat.name %></h2>
-      <p><%= boat.location %></p>
-    </div>
-  </div>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+url('https://prodwebassets.s3.amazonaws.com/boats/4681986/4681986_20140410083142702_1_XLARGE.jpg')">
+<div class="card-description">
+  <h2><%= boat.name %></h2>
+  <p><%= boat.location %></p>
+  <%= link_to boat_path(boat.id) , class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+  <p>delete</p>
+  <% end %>
+</div>
+</div>
 <% end %>
+
