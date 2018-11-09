@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_035541) do
     t.bigint "boat_id"
     t.date "start_date"
     t.date "end_date"
-    t.string "status", default: "requested"
+    t.string "status"
     t.integer "passenger_number"
     t.integer "total_price"
     t.datetime "created_at", null: false

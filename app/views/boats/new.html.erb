@@ -12,6 +12,8 @@
         <%= f.input :capacity, label: false, placeholder: "Capacity", input_html: {class: "transparent-input" } %>
         <%= f.input :crew_number, label: false, placeholder: "Crew size", input_html: {class: "transparent-input" } %>
         <%= f.input :photo, label: false, placeholder: "Photo", input_html: {class: "transparent-input" } %>
+         <%= f.input :photo_cache, as: :hidden, label: false, placeholder: "Photo", input_html: {class: "transparent-input" } %>
+
         <%= f.submit class: "btn-transparent" %>
       <% end %>
     </div>
