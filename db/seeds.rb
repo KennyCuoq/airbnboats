@@ -34,21 +34,20 @@ array_of_users.each do |user|
   counter +=1
 end
 
-boats = Boat.all
-boat = boats.sample
+# boats = Boat.all
+# boat = boats.sample
 
 
-array_of_users.each do |user|
-  2.times do
-    booking = Booking.create!(
-      user_id: user.id,
-      boat_id: boat.id,
-      start_date: "9-11-2018",
-      end_date:"12-11-2018",
-      status: "confirmed",
-      passenger_number: rand(1..10),
-      total_price: rand(500..1000)
-      )
-
-  end
-end
+# array_of_users.each do |user|
+#   2.times do
+#     booking = Booking.create!(
+#       user_id: user.id,
+#       boat_id: boat.id,
+#       start_date: "9-11-2018",
+#       end_date:"12-11-2018",
+#       status: "confirmed",
+#       passenger_number: rand(1..10),
+#       total_price: rand(500..1000)
+#       )
+#   end
+# end
