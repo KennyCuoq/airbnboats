@@ -17,6 +17,10 @@ array_of_users << steven
 array_of_users << kenny
 array_of_users << frederik
 array_of_users << dree
+array_of_boats = [boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8, boat9, boat10, boat11, boat12, boat13, boat14, boat15]
+
+
+
 
 array_of_users.each do |user|
   3.times do
