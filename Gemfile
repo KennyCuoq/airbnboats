@@ -18,6 +18,9 @@ gem 'webpacker'
 gem 'devise'
 gem "faker"
 gem "simple_calendar", "~> 2.0"
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'cloudinary'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
