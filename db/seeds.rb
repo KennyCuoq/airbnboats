@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
 User.destroy_all
 
 steven = User.create!(email: 'steven.vaneecke@gmail.com', password: "Steven")
@@ -17,14 +12,13 @@ array_of_users << steven
 array_of_users << kenny
 array_of_users << frederik
 array_of_users << dree
-array_of_boats = [boat1, boat2, boat3, boat4, boat5, boat6, boat7, boat8, boat9, boat10, boat11, boat12, boat13, boat14, boat15]
+url = ["https://res.cloudinary.com/depdgfsrb/image/upload/v1541742604/boats/boat3.png", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742581/boats/boat5.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742578/boats/boat4.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742577/boats/boat14.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742577/boats/boat13.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat12.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat11.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat9.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742575/boats/boat10.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742575/boats/boat8.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat7.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat2.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat1.jpg"]
 
-
-
+counter = 0
 
 array_of_users.each do |user|
   3.times do
-    boat = Boat.create!(
+    boat = Boat.new(
       name:   Faker::Cat.name,
       boat_type: "sailing boat",
       description: Faker::HarryPotter.quote,
@@ -32,11 +26,10 @@ array_of_users.each do |user|
       daily_price: rand(0..1000),
       capacity: rand(0..20),
       crew_number: rand(0..5),
-      photo: "This is a picture",
       user_id: user.id
       )
+boat.remote_photo_url = url.sample
+boat.save
   end
+  counter +=1
 end
-
-
-
