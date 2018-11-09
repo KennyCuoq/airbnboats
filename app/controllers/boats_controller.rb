@@ -23,6 +23,10 @@ class BoatsController < ApplicationController
   end
 
   def destroy
+    @boat = Boat.find(params[:id])
+    @boat.user = current_user
+    @boat.destroy
+    redirect_back(fallback_location: root_path)
   end
 
   private

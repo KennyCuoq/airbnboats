@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'boats#index'
   get 'dashboard', to: 'dashboard#user_profile'
-  resources :boats, only: [:index, :show, :new, :create, :delete] do
+  resources :boats, only: [:index, :show, :new, :create, :destroy] do
     resources :bookings, only: [:show, :create, :edit, :update]
   end
 
