@@ -6183,6 +6183,11 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+sweetalert2@^7.29.0:
+  version "7.29.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.29.0.tgz#636aa5e0a57bbbb75501ef39104fc68a1a26b351"
+  integrity sha512-QYMpgj+W1nmE5I6hQ+Kvj+xSAJ78o5oawNOm65fq+0DRuZqmNPwGNnyfMcA3/porpje6RjXJd41NCJN8Rj83wQ==
+
 tapable@^0.2.7:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
