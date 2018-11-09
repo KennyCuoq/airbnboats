@@ -1,13 +1,12 @@
-<h1>Bookings made on your boats</h1>
 <% @user.boats.each do |boat| %>
   <% boat.bookings.each do |booking| %>
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-      url('https://prodwebassets.s3.amazonaws.com/boats/4681986/4681986_20140410083142702_1_XLARGE.jpg')">
+      url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
       <div class="card-description">
-        <p><%= booking.status %></p>
-        <p><%= booking.end_date - booking.start_date %> days</p>
-        <p><%= booking.total_price %></p>
-        <p>Made by <%= booking.user.email %></p>
+        <p class="card-status"><%= booking.status %></p>
+        <p class="card-duration"><%= booking.end_date - booking.start_date %> days</p>
+        <p class="card-price"><%= booking.total_price %></p>
+        <p class="card-client">Made by <%= booking.user.email %></p>
         <h2><%= booking.boat.name %></h2>
         <p><%= booking.boat.location %></p>
       </div>
