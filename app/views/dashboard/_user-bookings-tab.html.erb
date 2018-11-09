@@ -1,0 +1,20 @@
+<div class="tabs">
+  <a class="tab active" data-target="user-bookings">
+    <p>Your bookings</p>
+  </a>
+  <a class="tab" data-target="boat-bookings">
+    <p>Your client reservations</p>
+  </a>
+</div>
+
+
+<div class="tab-content" id="user-bookings">
+  <h1>
+    <%= render 'user-reservations' %>
+  </h1>
+</div>
+<div class="tab-content" id="boat-bookings" hidden>
+    <h1>
+      BOOKINGS FROM CLIENTS MADE ON YOUR BOATS
+    </h1>
+</div>
