@@ -26,7 +26,7 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
     @boat.user = current_user
     @boat.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: dashboard_path)
   end
 
   private
