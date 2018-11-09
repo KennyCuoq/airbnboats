@@ -1,3 +1,4 @@
+
 <div >
   <div class="container">
     <div class="dashboard-grid text-center" style="height: calc(100vh - 70px);">
@@ -7,12 +8,11 @@
       <div class="user-boats grid-element">
         <%= render 'user-boats' %>
       </div>
-      <div class="user-reservations grid-element">
-        <%= render 'user-reservations' %>
-      </div>
-      <div class="user-bookings grid-element">
-        <%= render 'user-bookings' %>
+      <div class="user-bookings-tab grid-element">
+        <%= render 'user-bookings-tab' %>
       </div>
     </div>
   </div>
 </div>
+
+  <%= javascript_pack_tag 'dashboard' %>

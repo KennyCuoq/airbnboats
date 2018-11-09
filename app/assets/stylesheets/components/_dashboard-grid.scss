@@ -23,17 +23,24 @@
   // justify-content: space-around;
 }
 
+.user-bookings-tab {
+  grid-column: 2 / span 1 ;
+  grid-row: 1 / span 6;
+}
+
 .user-boats {
   grid-column: 1 / span 1 ;
   grid-row: 3 / span 4;
 }
 
-.user-bookings {
-  grid-column: 2 / span 1 ;
-  grid-row: 4 / span 3;
-}
+// .user-bookings {
+//   grid-column: 2 / span 1 ;
+//   grid-row: 4 / span 3;
+// }
 
-.user-reservations {
-  grid-column: 2 / span 1 ;
-  grid-row: 1 / span 3;
-}
+// .user-reservations {
+//   grid-column: 2 / span 1 ;
+//   grid-row: 1 / span 3;
+// }
+
+
