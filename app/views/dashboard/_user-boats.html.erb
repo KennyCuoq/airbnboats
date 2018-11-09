@@ -8,4 +8,10 @@
       <p><%= boat.location %></p>
     </div>
   </div>
+  <%= link_to boat_path(boat.id) , class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+          <p>delete</p>
+          <% end %>
 <% end %>
+
+
+
