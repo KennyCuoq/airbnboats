@@ -1,13 +1,15 @@
 <% @user.bookings.each do |booking| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-    url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
-    <div class="card-description">
-      <p><%= booking.status %></p>
-      <p><%= booking.end_date - booking.start_date %> days</p>
-      <p><%= booking.total_price %></p>
-      <h2><%= booking.boat.name %></h2>
-      <p><%= booking.boat.location %></p>
+  <%= link_to boat_booking_path(booking.boat, booking) do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+      url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
+      <div class="card-description">
+        <p><%= booking.status %></p>
+        <p><%= booking.end_date - booking.start_date %> days</p>
+        <p><%= booking.total_price %></p>
+        <h2><%= booking.boat.name %></h2>
+        <p><%= booking.boat.location %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
 
 <% end %>
