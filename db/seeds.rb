@@ -42,11 +42,11 @@ array_of_users.each do |user|
     booking = Booking.new
     booking.user = user
     booking.boat = Boat.where.not(user: user).sample
-    puts "Boat booked is #{booking.boat}"
+    # puts "Boat booked is #{booking.boat}"
     booking.start_date = Date.parse("12-12-2018")
     booking.end_date = Date.parse("23-12-2018")
-    booking.status = "pending"
-    puts "SAving again"
+    booking.status = "Pending"
+    # puts "SAving again"
     booking.passenger_number = rand(1..10)
     booking.total_price = booking.boat.daily_price * (booking.end_date - booking.start_date).to_i
     booking.save!
