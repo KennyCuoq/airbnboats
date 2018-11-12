@@ -22,7 +22,7 @@ array_of_users.each do |user|
       name:   Faker::Cat.name,
       boat_type: "sailing boat",
       description: Faker::HarryPotter.quote,
-      location: Faker::Address.country,
+      location: Faker::Address.full_address,
       daily_price: rand(0..1000),
       capacity: rand(0..20),
       crew_number: rand(0..5),
