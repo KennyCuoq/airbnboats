@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def create
     @boat = Boat.find(params[:boat_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user = current_user
     @booking.boat = @boat
     @booking.total_price = ((@booking.end_date - @booking.start_date).to_i + 1) * @boat.daily_price
@@ -15,17 +16,20 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
     @boat = Boat.find(params[:boat_id])
     @bookings = @boat.bookings
   end
 
   def edit
     @booking = Booking.find(params[:id])
+    authorize @booking
     @boat = Boat.find(params[:boat_id])
   end
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.update(booking_params)
     @booking.total_price = (@booking.end_date - @booking.start_date).to_i * @booking.boat.daily_price
     if @booking.save

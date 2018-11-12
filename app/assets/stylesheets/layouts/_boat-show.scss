@@ -1,0 +1,45 @@
+#booking-form {
+  // height: 60vh;
+  position: sticky; /* !important to override Gmaps inline CSS */
+  top: 10px;
+  right: 10px;
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 60px 40px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.boat-container{
+  background-color: #E3E9ED;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+.boat-info{
+  padding-top: 20px;
+}
+
+.show-boat-picture{
+  display: flex;
+  height: 40vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  background-size: cover;
+  border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+.picture-content{
+    align-items: bottom;
+
+}
+
+// #booking-form{
+//   margin-top: 50px;
+//   border-radius: 5px;
+//   position: sticky;
+// }
