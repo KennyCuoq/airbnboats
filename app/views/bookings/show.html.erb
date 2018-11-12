@@ -32,3 +32,22 @@
     <%= link_to "Change booking", edit_boat_booking_path(@boat, @booking), class: "btn btn-primary" %>
   </div>
 </div>
+
+
+
+
+
+<div class="info-container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="boat-info">
+        <ul>
+          <li><b>Boat type:</b> <%= @boat.boat_type %></li>
+          <li><b>Description:</b> <%= @boat.description %></li>
+          <li><b>Location:</b> <%= @boat.location %></li>
+          <li><b>Daily price:</b> <%= @boat.daily_price %></li>
+          <li><b>Capacity:</b> <%= @boat.capacity %></li>
+          <li><b>Crew number:</b> <%= @boat.crew_number %></li>
+        </ul>
+      </div>
+    </div>
