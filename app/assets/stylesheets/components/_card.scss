@@ -64,3 +64,16 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+.card-delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  text-decoration: none;
+  color: rgb(150,150,150);
+  &:hover {
+    color: rgb(130,130,130);
+
+  }
+
+}
