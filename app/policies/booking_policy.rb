@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    (record.user == user || user.admin)
+    record.user == user || user.admin || record.boat.user == user
   end
 
   def edit?
@@ -18,6 +18,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    (record.user == user || user.admin)
+    (record.user == user || user.admin || record.boat.user == user)
   end
 end
