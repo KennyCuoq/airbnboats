@@ -1,15 +1,25 @@
 <p class="tab">Your boats</p>
 
 <% @user.boats.each do |boat| %>
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill if boat.photo.url %>')">
-<div class="card-description">
-  <h2><%= boat.name %></h2>
-  <p><%= boat.location %></p>
-  <%= link_to boat_path(boat.id) , class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-  <p>delete</p>
+<div style="position: relative;">
+  <%= link_to boat_path(boat) do  %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill if boat.photo.url %>')">
+      <div class="card-description">
+        <h2><%= boat.name %></h2>
+        <p><%= boat.location %></p>
+        <%#= link_to boat_path(boat.id) , class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+
+        <%# end %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to boat_path(boat), method: :delete, class: "card-delete" do %>
+    <i class="fas fa-trash"></i>
   <% end %>
 </div>
-</div>
+
+
+
 <% end %>
+
 

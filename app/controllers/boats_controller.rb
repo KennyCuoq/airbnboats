@@ -1,20 +1,27 @@
 class BoatsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat)
   end
 
   def show
     @boat = Boat.find(params[:id])
+    authorize @boat
     @booking = Booking.new
   end
 
   def new
     @boat = Boat.new
+    authorize @boat
   end
 
   def create
+
     @boat = Boat.new(boat_params)
     @boat.user = current_user
+    authorize @boat
     if @boat.save
       redirect_to dashboard_path
     else
@@ -24,6 +31,7 @@ class BoatsController < ApplicationController
 
   def destroy
     @boat = Boat.find(params[:id])
+    authorize @boat
     @boat.user = current_user
     @boat.destroy
     redirect_back(fallback_location: dashboard_path)
