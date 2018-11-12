@@ -7,7 +7,7 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def create?
-    (record.user == user || user.admin)
+    (!user.nil? || user.admin)
   end
 
   def new?
@@ -20,7 +20,7 @@ class BoatPolicy < ApplicationPolicy
 
 
   def destroy?
-    (record.user == user || user.admin)
+    (!user.nil? || user.admin)
   end
 
 end
