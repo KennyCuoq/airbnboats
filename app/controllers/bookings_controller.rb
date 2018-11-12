@@ -28,6 +28,7 @@ class BookingsController < ApplicationController
   end
 
   def update
+    # raise
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.update(booking_params)
@@ -42,6 +43,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :passenger_number)
+    params.require(:booking).permit(:start_date, :end_date, :passenger_number, :status)
   end
 end

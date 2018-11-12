@@ -13,7 +13,7 @@
       </div>
     </div>
   <% end %>
-  <%= link_to boat_path(boat), method: :delete, class: "card-delete" do %>
+  <%= link_to boat_path(boat), method: :delete, class: "card-delete", data: {confirm: "Are you sure?"}  do %>
     <i class="fas fa-trash"></i>
   <% end %>
 </div>

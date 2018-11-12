@@ -1,14 +1,22 @@
-<% @user.bookings.each do |booking| %>
+<% @user.bookings.reverse.each do |booking| %>
   <%= link_to boat_booking_path(booking.boat, booking) do %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
       url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
-      <div class="card-description">
-        <p><%= booking.status %></p>
-        <p><%= booking.end_date - booking.start_date %> days</p>
-        <p><%= booking.total_price %></p>
-        <h2><%= booking.boat.name %></h2>
-        <p><%= booking.boat.location %></p>
+      <h5 class="card-summary">You're going to <%= booking.boat.location %> on the <%= booking.boat.name %></h5>
+      <p class="card-status"><%= booking.status %></p>
+      <div class="card-details">
+        <p class="card-duration"><%= booking.start_date.strftime('%a %e %b') %> - <%= booking.end_date.strftime('%a %e %b') %></p>
+        <p class="card-price">€<%= number_with_delimiter(booking.total_price, :delimiter => ',') %></p>
       </div>
+
+      <% unless booking.status == ("Cancelled" || "Declined") %>
+        <%= render 'cancel_button', boat: booking.boat, booking: booking %>
+      <% end %>
+
+<!--       <p class="card-price"><%= booking.total_price %></p>
+ -->
+
+
     </div>
   <% end %>
 
