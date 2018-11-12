@@ -1,81 +1,11 @@
-<!-- <div class="container">
-  <div class="row">
 
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,101,0.6) 0%, rgba(0,36,61,0.8) 20%), url('https://images.pexels.com/photos/1295361/pexels-photo-1295361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
-      <div class="banner-form">
-        <h1><%= @boat.name %></h1>
-
-        <ul>
-          <li>Boat type: <%= @boat.boat_type %></li>
-          <li>Description: <%= @boat.description %></li>
-          <li>Location: <%= @boat.location %></li>
-          <li>Daily price: <%= @boat.daily_price %></li>
-          <li>Capacity: <%= @boat.capacity %></li>
-          <li>Crew number: <%= @boat.crew_number %></li>
-        </ul>
-      </div>
-
-      <div class="banner-form">
-        <h1> Book an appointment </h1>
-        <div>
-          <%= simple_form_for([@boat, @booking]) do |f| %>
-          <div class="date-container">
-            <div>
-              <%= f.input :start_date, placeholder: "Start date", input_html: {class: "transparent-input" } %>
-            </div>
-            <div>
-              <%= f.input :end_date, placeholder: "End date", input_html: {class: "transparent-input" } %>
-            </div>
-          </div>
-          <%= f.input :passenger_number, placeholder: "Number of passengers", input_html: {class: "transparent-input" } %>
-          <%= f.submit class: "btn btn-success" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!--
-<div class="container-page">
-  <div class="boat-photo" style="background-image: linear-gradient(-225deg, rgba(0,101,101,0.6) 0%, rgba(0,36,61,0.8) 20%), url('https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
-  </div>
-  <div class="boat-info">
-    <ul>
-      <li>Boat type: <%= @boat.boat_type %></li>
-      <li>Description: <%= @boat.description %></li>
-      <li>Location: <%= @boat.location %></li>
-      <li>Daily price: <%= @boat.daily_price %></li>
-      <li>Capacity: <%= @boat.capacity %></li>
-      <li>Crew number: <%= @boat.crew_number %></li>
-    </ul>
-  </div>
-  <div class="boat-booking">
-    <h1> Book an appointment </h1>
-    <div>
-      <%= simple_form_for([@boat, @booking]) do |f| %>
-      <div class="date-container">
-        <div>
-          <%= f.input :start_date, placeholder: "Start date", input_html: {class: "transparent-input" } %>
-        </div>
-        <div>
-          <%= f.input :end_date, placeholder: "End date", input_html: {class: "transparent-input" } %>
-        </div>
-      </div>
-      <%= f.input :passenger_number, placeholder: "Number of passengers", input_html: {class: "transparent-input" } %>
-      <%= f.submit class: "btn btn-success" %>
-      <% end %>
-    </div>
-  </div>
-</div> -->
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8">
       <div class="boat-container">
         <div class="photo-container">
-<!--           <%= cl_image_tag @boat.photo %>
- -->          <div class="show-boat-picture" style="background-image: linear-gradient(-225deg, rgba(0,90,70,0.3) 0%, rgba(0,36,61,0.3) 50%), url(<%= cl_image_path @boat.photo %>);">
+          <div class="show-boat-picture" style="background-image: linear-gradient(-225deg, rgba(0,90,70,0.3) 0%, rgba(0,36,61,0.3) 50%), url(<%= cl_image_path @boat.photo %>);">
             <div class="picture-content">
               <h2><%= @boat.name.capitalize %></h2>
               <p>
@@ -160,6 +90,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-xs-12 col-sm-4" id="booking-form">
         <%= simple_form_for([@boat, @booking]) do |f| %>
         <div class="date-container">
