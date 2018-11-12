@@ -1,15 +1,16 @@
 <% @user.boats.each do |boat| %>
   <% boat.bookings.each do |booking| %>
     <%= link_to boat_booking_path(boat, booking) do %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-        url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
+      <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
         <div class="card-description">
-          <p class="card-status"><%= booking.status %></p>
-          <p class="card-duration"><%= booking.end_date - booking.start_date %> days</p>
-          <p class="card-price"><%= booking.total_price %></p>
-          <p class="card-client">Made by <%= booking.user.email %></p>
           <h2><%= booking.boat.name %></h2>
           <p><%= booking.boat.location %></p>
+        </div>
+        <p class="card-status"><%= booking.status %></p>
+        <div class="card-details">
+          <p class="card-duration"><%= booking.start_date.strftime('%a %e %b') %> - <%= booking.end_date.strftime('%a %e %b') %></p>
+          <p class="card-price">€<%= number_with_delimiter(booking.total_price, :delimiter => ',') %></p>
+          <p class="card-client">Made by <%= booking.user.email %></p>
         </div>
       </div>
     <% end %>
