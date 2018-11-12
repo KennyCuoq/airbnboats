@@ -17,14 +17,14 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @boat = Boat.find(params[:boat_id])
-    authorize @boat
+    authorize @booking
     @bookings = @boat.bookings
   end
 
   def edit
     @booking = Booking.find(params[:id])
     @boat = Boat.find(params[:boat_id])
-    authorize @boat
+    authorize @booking
   end
 
   def update

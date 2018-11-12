@@ -18,8 +18,10 @@ class BoatPolicy < ApplicationPolicy
     return true
   end
 
+
   def destroy?
-    destroy.user == user
+    # (record.user == user || user.admin)
+    record.user == user
   end
 
 end
