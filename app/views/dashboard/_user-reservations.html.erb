@@ -2,7 +2,8 @@
   <%= link_to boat_booking_path(booking.boat, booking) do %>
     <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
       url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
-      <h5 class="card-summary">You're going to <%= booking.boat.location %> on the <%= booking.boat.name %></h5>
+      <h5 class="card-summary">You're going to
+        <%= booking.boat.location.split(',')[-2].strip %> on the <%= booking.boat.name %></h5>
       <p class="card-status"><%= booking.status %></p>
       <div class="card-details">
         <p class="card-duration"><%= booking.start_date.strftime('%a %e %b') %> - <%= booking.end_date.strftime('%a %e %b') %></p>
