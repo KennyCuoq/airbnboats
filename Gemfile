@@ -18,10 +18,9 @@ gem 'webpacker'
 gem 'devise'
 gem "faker"
 gem "simple_calendar", "~> 2.0"
-gem 'dotenv-rails', groups: [:development, :test]
-
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'pundit'
 
 
 group :development do
