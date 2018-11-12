@@ -44,6 +44,8 @@
 }
 .card-description h2 {
   font-size: 24px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .card-description p {
   font-size: 14px;
@@ -75,5 +77,24 @@
     color: rgb(220,220,220);
 
   }
+}
 
+.card-details {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-align: right;
+
+  p {
+    margin-bottom: 0px;
+  }
+
+}
+
+
+
+.card-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
