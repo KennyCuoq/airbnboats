@@ -5,11 +5,19 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    true
+  end
+
   def update?
-    record.user == user
+    (record.user == user || user.admin)
   end
 
   def edit?
-    record.user == user
+    update?
+  end
+
+  def show?
+    (record.user == user || user.admin)
   end
 end

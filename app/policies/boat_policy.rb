@@ -7,21 +7,20 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    (record.user == user || user.admin)
   end
 
   def new?
-    return true
+    create?
   end
 
   def show?
-    return true
+    true
   end
 
 
   def destroy?
-    # (record.user == user || user.admin)
-    record.user == user
+    (record.user == user || user.admin)
   end
 
 end
