@@ -1,8 +1,8 @@
 <img src="<%= @user.photo %>" alt="profile-photo" class="avatar-large">
-
-<p><%= @user.first_name + ' ' + @user.last_name %></p>
-
-<p><%= @user.email %></p>
-<% if @user.boats.count > 0 %>
-  <p>Owns <%= @user.boats.count %> boats</p>
-<% end %>
+<div class="user-details">
+  <p><%= @user.first_name + ' ' + @user.last_name %></p>
+  <p><%= @user.email %></p>
+  <% if @user.boats.count > 0 %>
+    <p>Owns <%= @user.boats.count %> boats</p>
+  <% end %>
+</div>
