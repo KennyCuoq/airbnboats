@@ -15,6 +15,24 @@
 
   &:hover {
     background: rgba(158, 44, 37, 0.7);
+  }
+}
 
+.btn-accept {
+  background: rgba(106, 201, 68, 0.4);
+  padding: 5px;
+
+  &:hover {
+    background: rgba(106, 201, 68, 0.8);
+  }
+}
+
+.btn-decline {
+  background: rgba(242, 35, 24, 0.6);
+  padding: 5px;
+  margin-right: 10px;
+
+  &:hover {
+    background: rgba(242, 35, 24, 0.8);
   }
 }

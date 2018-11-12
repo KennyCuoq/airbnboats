@@ -1,6 +1,6 @@
-<% @user.bookings.each do |booking| %>
+<% @user.bookings.reverse.each do |booking| %>
   <%= link_to boat_booking_path(booking.boat, booking) do %>
-    <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+    <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
       url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
       <h5 class="card-summary">You're going to <%= booking.boat.location %> on the <%= booking.boat.name %></h5>
       <p class="card-status"><%= booking.status %></p>
@@ -10,10 +10,7 @@
       </div>
 
       <% unless booking.status == ("Cancelled" || "Declined") %>
-        <%= simple_form_for([booking.boat, booking]) do |f|  %>
-          <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden %>
-          <%= f.submit "Cancel", data: {confirm: "Are you sure you want to cancel?"}, class: "btn-transparent btn-cancel card-cancel"%>
-        <% end %>
+        <%= render 'cancel_button', boat: booking.boat, booking: booking %>
       <% end %>
 
 <!--       <p class="card-price"><%= booking.total_price %></p>
