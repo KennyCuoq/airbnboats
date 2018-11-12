@@ -8,3 +8,13 @@
       background: rgba(220,220,220,0.4);
     }
 }
+
+.btn-cancel {
+  background: rgba(158, 44, 37, 0.4);
+  padding: 5px;
+
+  &:hover {
+    background: rgba(158, 44, 37, 0.7);
+
+  }
+}

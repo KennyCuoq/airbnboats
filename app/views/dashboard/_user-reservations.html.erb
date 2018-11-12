@@ -8,10 +8,13 @@
         <p class="card-duration"><%= booking.start_date.strftime('%a %e %b') %> - <%= booking.end_date.strftime('%a %e %b') %></p>
         <p class="card-price">€<%= number_with_delimiter(booking.total_price, :delimiter => ',') %></p>
       </div>
-      <%= simple_form_for([booking.boat, booking]) do |f|  %>
+
+      <% unless booking.status == ("Cancelled" || "Declined") %>
+        <%= simple_form_for([booking.boat, booking]) do |f|  %>
           <%= f.input :status, input_html: {value: "Cancelled"}, as: :hidden %>
-          <%= f.submit "Cancel", data: {confirm: "Are you sure you want to cancel?"}, class: "btn-transparent btn-cancel"%>
+          <%= f.submit "Cancel", data: {confirm: "Are you sure you want to cancel?"}, class: "btn-transparent btn-cancel card-cancel"%>
         <% end %>
+      <% end %>
 
 <!--       <p class="card-price"><%= booking.total_price %></p>
  -->
