@@ -1,0 +1,4 @@
+<%= simple_form_for([boat, booking]) do |f|  %>
+  <%= f.input :status, input_html: {value: "Accepted"}, as: :hidden %>
+  <%= f.submit "Accept", class: "btn-transparent btn-accept"%>
+<% end %>

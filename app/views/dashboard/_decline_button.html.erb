@@ -1,0 +1,4 @@
+<%= simple_form_for([boat, booking]) do |f|  %>
+  <%= f.input :status, input_html: {value: "Declined"}, as: :hidden %>
+  <%= f.submit "Decline", data: {confirm: "Are you sure you want to decline this reservation?"}, class: "btn-transparent btn-decline"%>
+<% end %>
