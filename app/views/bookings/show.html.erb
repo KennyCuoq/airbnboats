@@ -1,52 +1,105 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,101,0.6) 0%, rgba(0,36,61,0.8) 20%), url('https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
-
-  <div class="banner-form">
-
-    <h2><%= @boat.name %></h2>
-    <p> Boat details:</p>
-    <ul>
-      <li><p><em>Name</em>: <%= @boat.name %></p></li>
-      <li><p><em>Type</em>: <%= @boat.boat_type %></p></li>
-      <li><p><em>Description</em>: <%= @boat.description %></p></li>
-      <li><p><em>Location</em>: <%= @boat.location %></p></li>
-      <li><p><em>Daily price</em>: <%= @boat.daily_price %></p></li>
-      <li><p><em>Capacity</em>: <%= @boat.capacity %></p></li>
-      <li><p><em>Crew number</em>: <%= @boat.crew_number %></p></li>
-    </ul>
-  </div>
-
-  <div class="banner-form">
-    <h1>Booking overview</h1>
-    <p> Below you can find an overview of your booking details</p>
-    <h2>Booking status: <%= @booking.status %></h2>
-    <p> booking details:</p>
-    <ul>
-      <li><p><em>Start date</em>: <%= @booking.start_date %></p></li>
-      <li><p><em>End date</em>: <%= @booking.end_date %></p></li>
-      <li><p><em>Number of passengers</em>: <%= @booking.passenger_number %></p></li>
-      <li><p><em>Total price</em>: <%= @booking.total_price %></p></li>
-    </ul>
-
-    <%= link_to "Go to index", boats_path, class: "btn btn-warning" %>
-    <%= link_to "Change booking", edit_boat_booking_path(@boat, @booking), class: "btn btn-primary" %>
-  </div>
-</div>
-
-
-
-
-
-<div class="info-container">
+<div class="container">
   <div class="row">
-    <div class="col-xs-6">
-      <div class="boat-info">
-        <ul>
-          <li><b>Boat type:</b> <%= @boat.boat_type %></li>
-          <li><b>Description:</b> <%= @boat.description %></li>
-          <li><b>Location:</b> <%= @boat.location %></li>
-          <li><b>Daily price:</b> <%= @boat.daily_price %></li>
-          <li><b>Capacity:</b> <%= @boat.capacity %></li>
-          <li><b>Crew number:</b> <%= @boat.crew_number %></li>
-        </ul>
+    <div class="col-xs-12 col-sm-8">
+      <div class="boat-container">
+        <div class="photo-container">
+          <div class="show-boat-picture" style="background-image: linear-gradient(-225deg, rgba(0,90,70,0.3) 0%, rgba(0,36,61,0.3) 50%), url(<%= cl_image_path @boat.photo %>);">
+            <div class="picture-content">
+              <h2><%= @boat.name.capitalize %></h2>
+              <p>
+                <span id="banner-typed-text"></span>
+              </p>
+            </div>
+          </div>        </div>
+          <div class="info-container">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="boat-info">
+                  <ul>
+                    <li><b>Boat type:</b> <%= @boat.boat_type %></li>
+                    <li><b>Description:</b> <%= @boat.description %></li>
+                    <li><b>Location:</b> <%= @boat.location %></li>
+                    <li><b>Daily price:</b> <%= @boat.daily_price %></li>
+                    <li><b>Capacity:</b> <%= @boat.capacity %></li>
+                    <li><b>Crew number:</b> <%= @boat.crew_number %></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-6 map">
+                <p>lLorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <h1>reviews</h1>
+                <div class="message">
+                  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+                  <div class="message-name">
+                    <h3>Gab Dehan</h3>
+                    <p>10/07/17</p>
+                  </div>
+                  <div class="message-body">
+                    <p><strong>I am not sure yet!</strong></p>
+                    <p>
+                      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                    </p>
+                  </div>
+                  <div class="message-status">
+                    <p class="status pending">Pending</p>
+                    <p class="price">€345</p>
+                  </div>
+                </div>
+                <div class="message">
+                  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+                  <div class="message-name">
+                    <h3>Gab Dehan</h3>
+                    <p>10/07/17</p>
+                  </div>
+                  <div class="message-body">
+                    <p><strong>I am not sure yet!</strong></p>
+                    <p>
+                      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                    </p>
+                  </div>
+                  <div class="message-status">
+                    <p class="status pending">Pending</p>
+                    <p class="price">€345</p>
+                  </div>
+                </div>
+                <div class="message">
+                  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+                  <div class="message-name">
+                    <h3>Gab Dehan</h3>
+                    <p>10/07/17</p>
+                  </div>
+                  <div class="message-body">
+                    <p><strong>I am not sure yet!</strong></p>
+                    <p>
+                      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                    </p>
+                  </div>
+                  <div class="message-status">
+                    <p class="status pending">Pending</p>
+                    <p class="price">€345</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="col-xs-12 col-sm-4" id="booking-confirmation">
+       <h3>Booking overview</h3>
+       <h4>Booking status: <%= @booking.status %></h4>
+       <p> booking details:</p>
+       <ul>
+        <li><p><em>Start date</em>: <%= @booking.start_date %></p></li>
+        <li><p><em>End date</em>: <%= @booking.end_date %></p></li>
+        <li><p><em>Number of passengers</em>: <%= @booking.passenger_number %></p></li>
+        <li><p><em>Total price</em>: <%= @booking.total_price %></p></li>
+      </ul>
+
+      <%= link_to "Go to index", boats_path, class: "btn btn-warning" %>
+      <%= link_to "Change booking", edit_boat_booking_path(@boat, @booking), class: "btn btn-primary" %>
     </div>
+  </div>

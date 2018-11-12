@@ -1,0 +1,35 @@
+#booking-confirm-box {
+  // height: 60vh;
+  position: sticky; /* !important to override Gmaps inline CSS */
+  top: 10px;
+  right: 10px;
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 40px;
+  padding:0px;
+  background-color: #F4F4F4;
+
+}
+
+
+.booking-form {
+  bottom: 10px;
+  right: 10px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 40px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+
+.booking-confirm {
+  // height: 60vh;
+  bottom: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 40px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}

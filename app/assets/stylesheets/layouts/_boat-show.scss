@@ -6,9 +6,24 @@
   margin-top: 40px;
   background-color: white;
   border-radius: 5px;
-  padding: 60px 40px;
+  padding: 40px 40px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
+
+#booking-confirmation {
+  // height: 60vh;
+  position: sticky; /* !important to override Gmaps inline CSS */
+  top: 10px;
+  right: 10px;
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 40px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+
+
 
 .boat-container{
   background-color: #E3E9ED;
@@ -35,8 +50,9 @@
 
 .picture-content{
     align-items: bottom;
-
 }
+
+
 
 // #booking-form{
 //   margin-top: 50px;
