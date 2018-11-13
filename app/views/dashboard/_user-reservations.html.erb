@@ -1,7 +1,7 @@
 <% @user.bookings.reverse.each do |booking| %>
   <%= link_to boat_booking_path(booking.boat, booking) do %>
     <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-      url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
+      url('<%= cl_image_path booking.boat.photo, height: 300, width: 400 if booking.boat.photo.url %>')">
       <h5 class="card-summary">You're going to
         <%= booking.boat.location.split(',')[-2].strip %> on the <%= booking.boat.name %></h5>
       <p class="card-status"><%= booking.status %></p>
