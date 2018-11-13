@@ -19,12 +19,22 @@ class BookingsController < ApplicationController
     authorize @booking
     @boat = Boat.find(params[:boat_id])
     @bookings = @boat.bookings
+        @marker = [{
+        lat: @boat.latitude,
+        lng: @boat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }]
   end
 
   def edit
     @booking = Booking.find(params[:id])
     authorize @booking
     @boat = Boat.find(params[:boat_id])
+        @marker = [{
+        lat: @boat.latitude,
+        lng: @boat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }]
   end
 
   def update
