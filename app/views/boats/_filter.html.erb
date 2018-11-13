@@ -1,0 +1,59 @@
+
+<!--   filter by category -->
+<form action="/boats">
+ <select name="filter_type">
+   <!-- <option value="" disabled selected>Select boat type</option> -->
+   <option value="" selected>Any type of boat</option>
+   <% @types.each do |type| %>
+   <option <%= 'selected' if params[:filter_category] == type %> value="<%= type %>"><%= type.capitalize %></option>
+   <% end %>
+ </select>
+ <select name="filter_price" >
+   <!-- <option value="" disabled selected>Select your price</option> -->
+    <option value="" selected>Max daily price</option>
+    <option value="400">400</option>
+    <option value="500">500</option>
+    <option value="600">600</option>
+    <option value="700">700</option>
+    <option value="800">800</option>
+    <option value="900">900</option>
+ </select>
+  <select name="filter_capacity" >
+   <!-- <option value="" disabled selected>Number of guests</option> -->
+    <option value="" selected>Number of guests</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+ </select>
+ <select name="filter_crew" >
+   <!-- <option value="" disabled selected>Select your price</option> -->
+    <option value="" selected>Min crew number</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+ </select>
+ <input type="submit" value="Search">
+</form>
+
+
+
+

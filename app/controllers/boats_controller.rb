@@ -4,6 +4,13 @@ class BoatsController < ApplicationController
 
   def index
     @boats = policy_scope(Boat)
+    @types = Boat.all.pluck(:boat_type).uniq
+    @prices = Boat.all.pluck(:daily_price).uniq
+    # byebug
+    @boats = @boats.where(boat_type: params[:filter_type]) if params[:filter_type].present?
+    @boats = @boats.where("daily_price < ?", params[:filter_price].to_i) if params[:filter_price].present?
+    @boats = @boats.where("capacity >= ?", params[:filter_capacity].to_i) if params[:filter_capacity].present?
+    @boats = @boats.where("crew_number >= ?", params[:filter_crew].to_i) if params[:filter_crew].present?
   end
 
   def show
