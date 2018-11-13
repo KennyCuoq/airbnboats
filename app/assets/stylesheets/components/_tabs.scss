@@ -2,6 +2,11 @@
   // background: #53443F;
   display: flex;
   // padding: 10px 10px 0 10px
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index:10;
+  background: white;
 }
 .tabs a {
   color: white;
@@ -21,11 +26,16 @@
   margin-bottom: 0;
 }
 .tab {
-  background: #756A66;
+  background: rgb(200, 200, 210);
   flex: 0 0 25%;
   text-align: center;
   padding: 20px 0;
   flex-grow: 1;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index:10;
+
 }
 .tab:first-child {
   border-radius: 10px 0 0 0;

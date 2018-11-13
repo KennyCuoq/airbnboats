@@ -3,10 +3,31 @@
 User.destroy_all
 
 puts "Creating users..."
-steven = User.create!(email: 'steven.vaneecke@gmail.com', password: "Steven")
+steven = User.new(email: 'steven.vaneecke@gmail.com', password: "Steven")
+url = 'https://avatars2.githubusercontent.com/u/41968309?v=4'
+steven.photo = url
+steven.first_name = 'Steven'
+steven.last_name = 'Van Eecke'
+steven.save!
 kenny = User.create!(email: 'kenny.cuoq@gmail.com', password: "KennyKenny")
+url = 'https://avatars1.githubusercontent.com/u/26207944?v=4'
+kenny.photo = url
+kenny.first_name = 'Kenny'
+kenny.last_name = 'Cuoq'
+kenny.save!
 frederik = User.create!(email: 'frederik.hossak@gmail.com', password: "Frederik")
+url = 'https://avatars0.githubusercontent.com/u/43231640?v=4'
+frederik.photo = url
+frederik.first_name = 'Frederik'
+frederik.last_name = 'Hossak'
+frederik.save!
 dree = User.create!(email: 'andreasava@hotmail.com', password: "DreeDree")
+url = 'https://avatars0.githubusercontent.com/u/43139321?v=4'
+dree.photo = url
+dree.first_name = 'Andrea'
+dree.last_name = 'Van Assche'
+dree.save!
+
 
 array_of_users = []
 array_of_users << steven
