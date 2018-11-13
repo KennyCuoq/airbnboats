@@ -1,0 +1,23 @@
+.boat-card {
+  height: 200px;
+  padding: 5px;
+}
+
+#map {
+  width: 100%;
+  height: 90%;
+}
+
+.location-paragraph {
+  font-size: 12px;
+}
+
+.price-display {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.boat-info ul {
+  list-style-type: none;
+}
