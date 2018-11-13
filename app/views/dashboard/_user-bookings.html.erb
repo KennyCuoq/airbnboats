@@ -1,7 +1,7 @@
 <% @user.boats.each do |boat| %>
   <% boat.bookings.reverse.each do |booking| %>
     <%= link_to boat_booking_path(boat, booking) do %>
-      <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill if booking.boat.photo.url %>')">
+      <div class="card-large" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path booking.boat.photo, height: 300, width: 400 if booking.boat.photo.url %>')">
         <!-- <div class="card-description"> -->
           <h5 class="card-summary">
             <%= booking.user.first_name %> has booked a trip on the <%= booking.boat.name %> in <%= booking.boat.location.split(',')[-2].strip %>
