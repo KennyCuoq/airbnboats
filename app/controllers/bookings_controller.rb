@@ -44,7 +44,12 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
     @booking.total_price = (@booking.end_date - @booking.start_date).to_i * @booking.boat.daily_price
     if @booking.save
-      redirect_to boat_booking_path(@booking.boat, @booking)
+      ref = URI.parse(request.env["HTTP_REFERER"])
+      if ref.to_s =~ /dashboard/
+        redirect_to dashboard_path
+      else
+        redirect_to boat_booking_path(@booking.boat, @booking)
+      end
     else
       render "boats/show"
     end
