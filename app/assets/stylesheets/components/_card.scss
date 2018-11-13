@@ -12,7 +12,7 @@
 
 
 .card-large {
-  height: 55vh;
+  height: 35vh;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -21,6 +21,7 @@
   margin-top: 15px;
   transition: all 0.3s ease;
   border-radius: 3px;
+
 }
 
 .card-wrapper {
@@ -88,7 +89,6 @@
   color: rgb(250,250,250);
   &:hover {
     color: rgb(220,220,220);
-
   }
 }
 
@@ -106,25 +106,31 @@
 
 .card-status {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
 }
 
 .card-summary {
   position: absolute;
   top: 5px;
   left: 10px;
+  font-weight: 300;
+
 }
 
 .card-cancel {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 15px;
+  right: 15px;
 }
 
 .card-status-actions {
   display: flex;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 15px;
+  right: 15px;
+}
+
+.card-price{
+  font-weight: 100;
 }

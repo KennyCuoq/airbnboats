@@ -9,7 +9,8 @@
   background: white;
 }
 .tabs a {
-  color: white;
+  color: #282922;
+
 }
 .tabs a:hover {
   cursor: pointer;
@@ -26,10 +27,11 @@
   margin-bottom: 0;
 }
 .tab {
-  background: rgb(200, 200, 210);
+
+  background: #E3E9ED;
   flex: 0 0 25%;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   flex-grow: 1;
   position: -webkit-sticky; /* Safari */
   position: sticky;
