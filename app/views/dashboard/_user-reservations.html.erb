@@ -3,8 +3,13 @@
 
     <div class="card-large">
       <%= cl_image_tag booking.boat.photo, class: "card-picture" %>
-      <h5 class="card-summary">You're going to
+      <% if booking.boat.location.include?(',') %>
+        <h5 class="card-summary">You're going to
         <%= booking.boat.location.split(',')[-2].strip %> on the <%= booking.boat.name %></h5>
+      <% else %>
+        <h5 class="card-summary">You're going to
+        <%= booking.boat.location %> on the <%= booking.boat.name %></h5>
+      <% end %>
       <p class="card-status"><%= booking.status %></p>
       <div class="card-details">
         <p class="card-duration"><%= booking.start_date.strftime('%a %e %b') %> - <%= booking.end_date.strftime('%a %e %b') %></p>

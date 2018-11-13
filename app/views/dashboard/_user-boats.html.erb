@@ -6,7 +6,7 @@
     <div class="card" style="background-image:  url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill if boat.photo.url %>')">
       <div class="card-description">
         <h2><%= boat.name %></h2>
-        <!-- <p><%= boat.location.split(',')[-2].strip %></p> -->
+        <!-- <p><%#= boat.location.split(',')[-2].strip %></p> -->
         <%#= link_to boat_path(boat.id) , class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
 
         <%# end %>

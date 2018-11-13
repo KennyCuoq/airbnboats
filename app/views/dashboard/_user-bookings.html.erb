@@ -7,7 +7,11 @@
 
         <!-- <div class="card-description"> -->
           <h5 class="card-summary">
-            <%= booking.user.first_name %> has booked a trip on the <%= booking.boat.name %> in <%= booking.boat.location.split(',')[-2].strip %>
+            <% if booking.boat.location.include?(',') %>
+              <%= booking.user.first_name %> has booked a trip on the <%= booking.boat.name %> in <%= booking.boat.location.split(',')[-2].strip %>
+            <% else %>
+              <%= booking.user.first_name %> has booked a trip on the <%= booking.boat.name %> in <%= booking.boat.location %>
+            <% end %>
           </h5>
           <!-- <h2><%= booking.boat.name %></h2>
           <p><%= booking.boat.location %></p> -->
