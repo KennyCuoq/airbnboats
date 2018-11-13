@@ -34,7 +34,8 @@ array_of_users << steven
 array_of_users << kenny
 array_of_users << frederik
 array_of_users << dree
-url = ["https://res.cloudinary.com/depdgfsrb/image/upload/v1541742604/boats/boat3.png", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742581/boats/boat5.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742578/boats/boat4.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742577/boats/boat14.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742577/boats/boat13.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat12.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat11.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat9.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742575/boats/boat10.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742575/boats/boat8.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat7.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat2.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat1.jpg"]
+url_array = ["https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat1.jpg", 'https://www.cirocapriboats.com/images/slide15.jpg', 'http://www.bluesun2.com.au/wp-content/uploads/2017/08/SILVERADO-SWAN-RIVER-CARNAC-BLUESUN-2-BOAT-CHARTERS-.jpg', 'http://www.getawayatthelake.com/slider/boat-rentals.jpg', 'https://shellislandshuttle.com/wp-content/uploads/2017/08/landingpage_image_pontoon.jpg', 'http://clevelandboatshow.com/wp-content/uploads/2015/06/Lifestyle_2Boats2Girls_SeaRay_ASextended.jpg', 'http://www.sealagoon.com/cms/wp-content/themes/sea2015/images/sliders/main00.jpg', 'http://www.sealagoon.com/cms/wp-content/themes/sea2015/images/sliders/main01.jpg', 'http://img.over-blog-kiwi.com/600x450-ct/1/04/49/45/20141214/ob_979913_wally-esense-1.jpg', 'https://bayliner.com/wp-content/uploads/2015/08/ElementXR7ButonSeriesRollOverImg.jpg', 'https://bayliner.com/wp-content/uploads/2015/08/bayliner195deckboat_Masonry_Ajpg1.jpg', 'https://bayliner.com/wp-content/uploads/2018/07/BAY-215DB-DeckBoatPage-Masonry-D.jpg']
+#"https://res.cloudinary.com/depdgfsrb/image/upload/v1541742604/boats/boat3.png", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742581/boats/boat5.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742578/boats/boat4.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742577/boats/boat14.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742577/boats/boat13.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat12.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat11.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742576/boats/boat9.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742575/boats/boat10.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742575/boats/boat8.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat7.jpg", "https://res.cloudinary.com/depdgfsrb/image/upload/v1541742574/boats/boat2.jpg"
 
 
 counter = 0
@@ -51,7 +52,9 @@ array_of_users.each do |user|
       crew_number: rand(0..5),
       user_id: user.id
       )
-    boat.remote_photo_url = url.sample
+    url = url_array.sample
+    boat.remote_photo_url = url
+    url_array.delete(url)
     boat.save
   end
   counter +=1
@@ -59,7 +62,7 @@ end
 
 puts "Now creating bookings..."
 array_of_users.each do |user|
-  4.times do
+  3.times do
     booking = Booking.new
     booking.user = user
     booking.boat = Boat.where.not(user: user).sample
